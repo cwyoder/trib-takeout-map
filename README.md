@@ -1,3 +1,7 @@
+NOTE: ALL MEDIA HAS BEEN REMOVED FROM REPOSITORY TO MAKE IT PUBLIC
+
+You can look at the project here: https://www.chicagotribune.com/dining/ct-food-chicago-best-takeout-100-restaurants-2021-20210112-dgccbvd7fbevfjcvrfnqp54juu-htmlstory.html
+
 # 100 best takeout spots in Chicago
 
 
