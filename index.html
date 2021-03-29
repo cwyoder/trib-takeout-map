@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html{% block html_tag_extras %}{% endblock %}>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://apps.chicagotribune.com/arc-stylesheets/ct-framework5ac5bf96b1d448acdaae.css">
+    <link rel="stylesheet" href="https://apps.chicagotribune.com/arc-stylesheets/ct-features5ac5bf96b1d448acdaae.css">
+    <link rel="prefetch" href="https://apps.chicagotribune.com/arc-stylesheets/ct-index5ac5bf96b1d448acdaae.css">
+    <link rel="prefetch" href="https://apps.chicagotribune.com/arc-stylesheets/ct-services5ac5bf96b1d448acdaae.css">
+
+    <style>
+        body{background-color:#FFF}.card.card-pull-left{border:0;margin:0 24px 24px 0;width:100%}.card.card-pull-right{border:0;margin:0 0 24px 24px;width:100%}@media screen and (min-width:416px){.card.card-pull-left{margin:24px 48px 24px 0;width:calc(50% - 12px)}.card.card-pull-right{margin:24px 0 24px 48px;width:calc(50% - 12px)}}.card .card-content p.trb_br{margin-top:18px;padding-top:0}.trb_br_a{color:#A87A03;text-decoration:none;font-weight:normal}.trb_br_a:hover{color:#CFB53C}.trb_br_a:after{content:attr(data-br-t)}.card .card-content p.trb_br_dc{font:12px Arial,sans-serif;display:table-cell;padding-top:0}.trb_br_dc_p,.trb_br_dc+p{display:none}.trb_br_dc_a{color:#9a9a99;position:relative;font:12px Arial,sans-serif;text-decoration:none}.trb_br_dc_a:hover{text-decoration:none;color:#9a9a99}.trb_br_dc_a:after,.trb_br_dc_p:before{content:attr(data-br-dct)}.trb_br_dc_a:hover+.trb_br_dc_p{background-color:#363636;color:#FFF;position:absolute;display:block;width:170px;line-height:14px;border-radius:5px;padding:10px;z-index:60;margin-top:5px;word-wrap:normal}.trb_br_dc_p:after{border-color:transparent transparent #363636;border-style:solid;border-width:0 6px 6px 6px;content:'';position:absolute;z-index:32;top:-5px;left:10px}.c--card{background-color:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.c--card--cnt{padding:16px 16px 0;color:#333;font:400 17px/28px Georgia,serif}.c--card--cnt:last-child{padding:16px}@media (min-width:416px){.c--card--cnt{padding:24px 24px 0;font:400 17px/30px Georgia,serif}.c--card--cnt:last-child{padding:24px}}.c--i:hover svg{fill:#CEE8FA}.c--l{padding:0;list-style-type:none;margin:0}.ft{background-color:#004e87}.ft a,.ft a:focus,.ft h3 a:hover{color:#FFF}.ft svg{fill:#FFF}.ft a:hover{color:#999}.ft--ctn{display:flex;flex-direction:column}.ft--cta{grid-row:1/span 1;grid-column:2/span 1}.ft--cta li{margin-bottom:16px}.ft--logo{display:none}.ft--menu{display:flex;grid-row:1/span 2;grid-column:3/span 4;margin:24px 0 0}.ft--menu ul:first-child{width:50%}.ft--menu ul:last-child{margin-left:16px}.ft--btnbar{display:flex;grid-column:2/span 1;grid-row:2/span 1;margin-top:16px;align-self:center}.ft--cr{color:#FFF;text-align:center;font:12px 'Open Sans';margin-top:16px}@media (min-width:416px){.ft--ctn{display:grid}.ft--cta{grid-column:1/span 1}.ft--menu{grid-column:2/span 1;margin:0 0 0 16px}.ft--btnbar{grid-column:1/span 1}}@media (min-width:801px){.ft{min-height:364px}.ft--ctn{padding:48px}.ft--btnbar,.ft--cta{grid-column:2/span 1}.ft--logo{display:block;grid-row:1/span 2;grid-column:1/span 1;background-image:url(/resources/gdist/5ac5bf96b1d448acdaae/images/logo_chi_icon_chiblue.svg);background-color:#FFF}.ft--btnbar,.ft--cr{margin-top:24px}.ft--menu ul:last-child{margin-left:24px}.ft--menu{grid-column:3/span 4}}.icon-10-27{width:10px;height:27px}.icon-14-14{width:14px;height:14px}.icon-16-16{width:16px;height:16px}.icon-16-17{width:16px;height:17px}.icon-17-18{width:17px;height:18px}.icon-18-18{width:18px;height:18px}.icon-18-27{width:18px;height:27px}.icon-6-16{width:6px;height:16px}.floating-article-recommender{background-color:#fff;position:fixed;bottom:0;left:0;height:173px;z-index:5000}.floating-article-recommender div{float:left;padding:16px}.floating-article-recommender div,.floating-article-recommender div a{font-family:'Open Sans'}.floating-article-recommender .article-label,.floating-article-recommender .home-link a{color:#fff;text-transform:capitalize;font-weight:400}.floating-article-recommender .article-label{width:60%;height:50px;background-color:#000;font-size:12px;text-align:left}.floating-article-recommender .home-link{width:40%;height:50px;background-color:#9DD1F6;font-size:14px;text-align:center}.floating-article-recommender .blurb-box{width:70%;margin-right:16px;font-size:16px}.floating-article-recommender .blurb-box a{font-size:16px}.floating-article-recommender .blurb-box.with-image{width:70%}.floating-article-recommender .image-box{padding:16px 0;position:absolute;right:16px;top:68px;height:90px;width:90px;overflow:hidden}.floating-article-recommender .image-box img{max-height:100px}
+    </style>
+
+
+</head>
+
+<body lang="en-US">
+    
+    <div id="pb-root" class="collapsed-nav">
+        <header id="app-bar-sticky" class="sticky high-z-index">
+            <div class="wrapper clearfix full pb-feature pb-layout-item pb-f-global-app-bar" id="fstBUg1ioZ41vr">
+                <div id="app-bar" class="app-bar card card-dark card-accent card-shadowed" role="navigation">
+                    <div class="justify-space-between flex-container-row relative app-bar-inner container"></div>
+                </div>
+            </div>
+        </header>
+       
+        <div data-role="close-tray" amp-access="NOT showPaywall">
+            <article class="grid container padded-container">
+                <header id="top" class="top full-columns">
+
+                    <div class="wrapper clearfix full pb-feature pb-layout-item pb-f-article-header" id="fixEEg1ioZ41vr">
+                        <div class="card">
+                            <div class="card-content align-left">
+                                <ul class="tag-list-wrapper list-unstyled flex-container-row align-left">
+                                    <li> <span class="tag tag-solid tag-first"> Topic </span> </li>
+                                </ul>
+                                <h1 class="spaced spaced-xl spaced-top spaced-bottom">{{ htmlstory.title }}</h1>
+                            </div>
+
+                            <div class="card-footer flex-container-row flex-mobile-column align-items-center ">
+                                <div class="byline-container flex-container-row align-items-center">
+  
+                                    <div class="byline-timestamp-container flex-container-row flex-tablet-column flex-mobile-column align-items-center">
+                                        <div class="byline-wrapper"> 
+                                            <span class="byline byline-article">By <span class="uppercase">{{ htmlstory.byline }}</span> </span>
+                                        </div> 
+                                        <div class="timestamp-wrapper flex-container-row align-items-center flex-mobile-column ">
+                                            <div class="align-center"> <span class="timestamp spaced spaced-sm spaced-left spaced-right hidden-mobile hidden-tablet">|</span> <span class="timestamp timestamp-article">Chicago Tribune</span> <span class="timestamp spaced spaced-sm spaced-left spaced-right hidden-mobile">|</span> </div>
+                                            <div> <span class="timestamp timestamp-article "> Date </span> <span class="timestamp spaced spaced-sm spaced-left spaced-right hidden-tablet">|</span> <span class="timestamp timestamp-article hidden-tablet "> Time </span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <section id="left" class="left guttered width-100">
+                    <div class="wrapper clearfix full pb-feature pb-layout-item pb-f-article-body" id="fJRi4l1ioZ41vr">
+                        <div class="collection collection-cards">
+                            <div data-type="text" class="card collection-item ">
+                                <div class=" card-content ">
+                                    <div class="element element-rawhtml ">
+                                        {% include htmlstory_template|default("_htmlstory.html") %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-type="text" class="card collection-item card-border-bottom card-border-bottom-thick card-border-bottom-dark ">
+                            </div>
+                        </div>
+                    </div>              
+                </section>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

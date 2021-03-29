@@ -1,0 +1,6 @@
+git+https://github.com/newsapps/p2p-python.git#egg=p2p-tribune
+git+https://tribune.unfuddle.com/git/tribune_python-tribune-viztools/@0.9.4#egg=tribune_viztools
+git+https://github.com/newsapps/python-tribune-omniture.git
+smartypants
+ftfy==4.4.3
+simplejson

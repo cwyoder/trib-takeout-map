@@ -1,0 +1,394 @@
+// Enables Tribune colors, but is required for everything.
+@import 'base-variables';
+// @import 'base-config'; // If you are using the off-platform blueprint, uncomment this.
+
+// ---- ADD MORE VARIABLES HERE ---------------------------------------------
+// ---- (If working off platform, you can overide variable values here) -----
+
+$submit-button-width:50px;
+$error_color:$trib-red3;
+
+
+// Required for everything, too, but can be broken down into smaller explicit imports if desired. 
+@import 'base-mixins';
+
+// ---- MAKE OR IMPORT MORE MIXINS HERE ---------------------------------------------
+
+
+
+// ---- TRIB CLASSES, UNCOMMENT THE ONES YOU WANT -----------------------------------
+// @import 'ngux-visibility-toggles';
+// @import 'trib-bulletbox';
+// @import 'trib-buttons';
+@import 'trib-colors';
+@import 'trib-images-charts';
+// @import 'trib-legends';
+// @import 'trib-skeleton';
+// @import 'trib-tables';
+// @import 'trib-timeline-basic';
+@import 'trib-typography';
+// @import 'trib-utilities';
+
+// ---- OFF-PLATFORM COMPONENT STYLES, UNCOMMENT THE ONES YOU WANT --------------------
+// ---- (You'll need most or all of them) ---------------------------------------------
+// @import 'base-scaffolding';
+// @import 'base-footer';
+// @import 'base-navbar';
+// @import 'base-social';
+// @import 'base-byline';
+// @import 'base-adverts';
+// @import 'base-comments';
+// @import 'base-call-to-action';
+// @import 'base-hamburger';
+
+
+// ---- IMPORT PROJECT STYLES FROM PARTIAL FILES HERE ---------------------------------------------
+@import '_leaflet';
+
+
+// ---- WRITE MORE PROJECT STYLES HERE ---------------------------------------------
+
+.sr-only{
+	// Use this to hide elements from everything except screen readers.
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.credits, .trb_mainContent .credits {
+	// All notes, sources and credits should go inside a container class='credits'
+	// and should use the agate type style. No italics
+	p{ @include agate(); }
+}
+
+.dataviz-wrapper {
+	max-width: 720px;
+
+	h3 {
+		@include sans-serif-text(18px, 1.4em, bold);
+	}
+}
+
+.restaurant-container {
+	margin: 20px 0;
+	border-bottom: 1px solid $trib_gray3;
+	padding: 40px 0;
+
+	h2 {
+		@include sans-serif-text(23px, 1.3em, bold);
+		margin: 0;
+	}
+}
+
+.restaurant-info {
+	p {
+		@include sans-serif-text(18px, 1.4em);
+		font-style: italic;
+		margin: 10px 0 0 0;
+	}
+}
+
+.contact {
+	p {
+		@include sans-serif-text(18px, 1.4em);
+		font-style: italic;
+		margin: 0 0 5px 0;
+	}
+
+	a {
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.blurb {
+	margin: 10px 0 0 0;
+	p {
+		@include sans-serif-text(18px, 1.4em);
+		margin: 0 0 5px 0;
+	}
+	a {
+		font-size: 16px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+}
+
+.back-map {
+	@include sans-serif-text(14px, 1.4em, bold);
+	text-decoration: none;
+	color: $trib_gray3;
+	margin: 30px 0 0 0;
+}
+
+.back-map:hover {
+	text-decoration: underline;
+}
+
+#map-controls {
+	display: flex;
+	align-items: flex-end;
+	margin: 0 0 1rem 0;
+}
+
+.filter-container {
+	margin: 0 1rem 0 0;
+	p {
+		@include sans-serif-text(16px, 1.4em, bold);
+		margin: 0 0 5px 0;
+	}
+
+	select {
+		width: 100%;
+	}
+}
+
+#count-p {
+	@include sans-serif-text(14px, 1.4em);
+	margin: 0 0 0 1rem;
+	font-style: italic;
+}
+
+.map {
+
+	&__map-container {
+		width:80%;
+		margin:0 auto;
+
+		.leaflet-pane .leaflet-overlay-pane svg path{
+			pointer-events: auto;
+			z-index:500;
+		}
+
+		.leaflet-grab { cursor: auto; }
+		.leaflet-dragging .leaflet-grab{ cursor: move; }
+	}
+
+    &__location-icon-user{
+      // height:55px;
+      // width:55px;
+      border-radius: 50%;
+      padding:2px;
+      background-color:black;
+      border:1px solid white;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.65);
+      box-sizing: content-box;
+      // color:white;
+      // font-weight:bold;
+    }
+
+	&__location-icon{
+		//height:10px;
+		//width:10px;
+		border-radius: 50%;
+		padding:2px;
+		border:1px solid white;
+		background-color: $trib_blue3;
+
+	}
+
+	&__location-icon span{
+		@include sans-serif-text(13px, 1.3em, bold);
+		margin:0;
+		padding:0;
+		text-align:center;
+		color:white;
+		align-self: center;
+	}
+}
+
+.popup{
+  h4{
+    @include sans-serif-text(16px, 1.3em, bold);
+    margin:0;
+    letter-spacing: 0;
+  }
+
+  h4 span{
+  }
+
+  p{
+  	@include sans-serif-text(14px, 1.3em);
+  	margin:2px 0 0 0;
+  	padding:0;
+  }
+
+  ul {
+    margin-top:0px;
+    margin-bottom:5px;
+    list-style: none;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul li {
+    @include sans-serif-text(14px, 1.2em);
+    padding: 0;
+    margin: 6px 0;
+  } 
+}
+
+
+@keyframes spin { 
+    100% { transform:rotate(360deg); } 
+}
+
+
+.lookup{
+  margin-bottom:20px;
+    
+    &__hed{
+        @include sans-serif-text(18px, 1.25em, bold);
+        margin:0 0 10px 0;       
+    }
+}
+
+.profile-lookup{
+    @include clearfix();
+  
+    &__instructions{
+        @include sans-serif-text(14px, 1.3em);
+        font-style:italic;
+        margin-bottom:5px;
+    }
+
+    label{
+        @include sans-serif();
+        font-weight: bold;
+        display:block;
+        margin: 0 0 10px 0;
+        width:100%;
+    }
+  
+    &__error-message{
+        @include sans-serif();
+        font-weight: bold;
+        color:$error_color;
+        opacity:0;
+        max-height: 0;
+        margin: 0;
+        overflow: hidden;
+        transition: all 200ms ease;
+    }
+  
+    &--error{
+         
+        .profile-lookup__inner{
+            // When there is a geocoding error
+            background:$error_color;
+            color:white;
+            transition: all 200ms ease;
+        }
+         
+        .profile-lookup__error-message{
+            opacity:1;
+            max-height: 100vh;
+            margin:10px 0 0 0;
+            transition: all 200ms ease;
+        }
+    }
+  
+    &__inner{
+        position:relative;
+        width:100%;
+        height:50px;
+        background: #f0f0f0;
+        overflow:hidden;
+        transition: all 200ms ease;
+    }
+     
+    &__note{
+        @include agate();
+        color:$trib_gray2;
+        margin:10px 0 0 0;
+    }
+  
+    input[type='text']{
+        @include sans-serif();
+  
+        background:transparent;
+        position:absolute;
+        top:0;
+        left:0;
+        width: 100%; // fallback
+        width: calc(100% - 15px - #{$submit-button-width});
+        height:100%;
+        padding: 0;
+        margin: 0 0 0 15px;
+        border: 0;
+        transition:all 150ms ease;
+    }
+  
+    button[type='submit']{
+     
+        position:absolute;
+        top:50%;
+        right:0;
+        width: $submit-button-width;
+        height: $submit-button-width;
+        margin:#{$submit-button-width / -2} 0 0 0;
+  
+        cursor:pointer;
+  
+        background:transparent;
+        padding:0;
+        border:none;
+        transition:all 150ms ease;
+  
+    }
+  
+    input[type='text']:focus ~ button[type='submit']{
+        opacity:1;
+        transition:all 150ms ease;
+    }
+}
+
+.submit-icon{
+    width:25px;
+    display:none;
+  
+    &.submit-icon--visible{
+        display:block;
+    }
+     
+    &--spinner{
+        animation:spin 2s linear infinite;
+    }
+}
+
+
+
+@media all and (min-width: $phablet-min-width){
+	// By default, this is 450px+
+	p{
+		font-size: 18px;
+		line-height: 1.5em;
+	}
+}
+
+@media all and (min-width: $tablet-min-width){
+	// ONLY CHANGES FOR TABLETS + DESKTOPS
+	// By default, this is 650px+	
+}
+
+@media all and (min-width: $desktop-min-width){
+	// ONLY CHANGES FOR DESKTOPS
+	// By default, this is 850px+
+}

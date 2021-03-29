@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="//{{ ROOT_URL }}/css/styles.css">
+  <style type="text/css">
+    .embedded body{
+      margin:0;
+      padding:5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class='dataviz-wrapper'>
+    {# Put all your content in here. #}
+
+    <section class='lookup'>
+      <div style='display:none;height:0'>{% include 'img/sprite.svg' %}</div>
+      <h1 id='map' class='lookup__hed'>Enter your ZIP code, address or town</h1>   
+      <div class='profile-lookup'>
+          <div class='profile-lookup__inner'>
+              <form>
+                  <input id='search-address' type='text' name='address' placeholder='Search for an address'>
+                  <!-- <button type='submit' id='search-address-submit'>Submit</button> -->
+                  <button type='submit' id='search-address-submit'>
+                    <span class='submit-icon submit-icon--arrow submit-icon--visible'>
+                        <svg viewBox="0 0 25 25" class=''>
+                              <use xlink:href="#arrow" />
+                        </svg>
+                    </span>
+                    <span class='submit-icon submit-icon--spinner'>
+                        <svg viewBox="0 0 25 25" >
+                              <use xlink:href="#spinner" />
+                        </svg>
+                    </span>
+                  </button>
+              </form>
+          </div>
+      </div>
+    </section>
+
+    <div id='map-controls'>
+      <div class='filter-container'>
+        <p>Filter by cuisine:</p>
+        <select id='cuisineTypeSelect'>
+          <option value='all'>All</option>
+        </select>
+      </div>
+      <div class='filter-container'>
+        <p>Filter by price:</p>
+        <select id='priceSelect'>
+          <option value='all'>All</option>
+          <option value='1'>$</option>
+          <option value='2'>$$</option>
+          <option value='3'>$$$</option>
+          <option value='4'>$$$$</option>
+        </select>
+      </div>
+      <p id='count-p' style='display:none;'></p>
+    </div>
+
+    <div id='takeout-map' class='map__map-container' style='width:100%; height:600px;'></div>
+
+    <div id='list'>
+      {% for rest in list %}
+      <div id='{{rest.id}}' class='restaurant-container' data-price='{{rest.price|length}}' data-type='{{rest.type}}'>
+        <h2>{{rest.name}}</h2>
+        <div class='restaurant-info'>
+          <p>{{rest.type}} | {{rest.cuisine}} | Price: {{rest.price}}</p>
+        </div>
+        {% if rest.photo %}
+        <figure class='trib-image'>
+          <img src='//{{ROOT_URL}}/img/photos/{{rest.photo}}'>
+          <figcaption>{{rest.photo_credit}}</figcaption>
+        </figure>
+        {% endif %}
+        <div class='blurb'>
+          <p>{{rest.blurb}}</p>
+          {% if rest.link %}
+          <p><a href='{{rest.link}}' target='_blank'>More coverage</a></p>
+          {% endif %}
+        </div>
+        <div class='contact'>
+          <p>
+            {{rest.address}}, 
+            {% if rest.neighborhood %}{{rest.neighborhood}}, {% endif %}
+            {{rest.city}}
+          </p>
+          {% if rest.address_2 %}
+          <p>
+            and {{rest.address_2}}, 
+            {% if rest.neighborhood_2 %}{{rest.neighborhood_2}}, {% endif %}
+            {{rest.city_2}}
+          </p>
+          {% endif %}
+          {% if rest.phone %}
+          <p>{{rest.phone}} | 
+            {% if rest.website %}
+            <a href='{{rest.website}}' target='_blank'>website</a>
+            {% endif %}
+          <p>
+          {% else %}
+          {% if rest.website %}
+          <p><a href='{{rest.website}}' target='_blank'>website</a></p>
+          {% endif %}
+          {% endif %}
+        </div>
+        <a class='back-map' href="javascript: document.getElementById('map-controls').scrollIntoView({behavior:'smooth'});">Back to map</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {# Using custom JavaScript? Uncomment the script tags below. #}
+  <script>
+    window.takeout = [
+    {% for restaurant in map %}
+      {"name":"{{restaurant.name}}","type":"{{restaurant.type}}","cuisine":"{{restaurant.cuisine}}","price":"{{restaurant.price}}","address":"{{restaurant.address}}","city":"{{restaurant.city}}","lat":"{{restaurant.lat}}","lng":"{{restaurant.lng}}","id":"{{restaurant.id}}"},
+    {% endfor %}
+    ]
+  </script>
+  <script>window.ROOT_URL = "{{ ROOT_URL }}";</script>
+  <script src="//{{ ROOT_URL }}/js/vendor.min.js"></script>
+  <script src="//{{ ROOT_URL }}/js/app.min.js"></script>
+
+  {# Using ai2html? Uncomment the resizer below. #}
+  {# <script src="//{{ ROOT_URL }}/scripts/resizer-tribune.js"></script> #}
+
+  {# The next two scripts are needed to make the iframe responsive. Don't remove them. #}
+  <script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+  <script>
+    var pymChild = new pym.Child();
+  </script>
+</body>
+</html>
